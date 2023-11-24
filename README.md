@@ -95,9 +95,9 @@ Les requêtes SQL permettant de créer les rôles et définir les permissions so
 
 ### Qu'est-ce que la méthode MERISE ?
 
-> MERISE = Méthode d'Etude et de Réalisation Informatique pour les Systèmes d'Sntreprise
+> MERISE = Méthode d'Etude et de Réalisation Informatique pour les Systèmes d'Entreprise
 
-Méthode de conception des systèmes d'information créée dans les années 70 par une équipe de chercheurs (Jean-Louis le Moigne, Hubert Tardieu, Dominique Nancy, Henry Heckenroth, Daniel Pasco, Bernard Espinasse), encore très utilisée aujourd'hui pour la conception des bases de données.
+Méthode de conception des systèmes d'information créée dans les années 1970 par une équipe de chercheurs (Jean-Louis le Moigne, Hubert Tardieu, Dominique Nancy, Henry Heckenroth, Daniel Pasco, Bernard Espinasse), encore très utilisée aujourd'hui pour la conception des bases de données.
 
 La méthode MERISE propose de considérer quatre niveaux :
 
