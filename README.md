@@ -65,14 +65,14 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 ### RBAC (Role-Based Access Control)
 
-* Le rôle ``STORE_MANAGER`` gère l'ensemble de la base de données, il peut être considéré comme un "super role"
-* Le rôle ``STORE_USERS`` gère uniquement les données relatives aux utilisateurs
-* Le rôle ``STORE_PRODUCTS`` gère uniquement les données relatives aux produits
-* Le rôle ``STORE_ORDERS`` gère uniquement les données relatives aux commandes
+* Le rôle ``store_manager`` gère l'ensemble de la base de données, il peut être considéré comme un "super role"
+* Le rôle ``store_manager_users`` gère uniquement les données relatives aux utilisateurs
+* Le rôle ``store_manager_products`` gère uniquement les données relatives aux produits
+* Le rôle ``store_manager_orders`` gère uniquement les données relatives aux commandes
 
 #### Tableau de correspondance rôle / privilège
 
-| Privilège | Rôle STORE_MANAGER | Rôle STORE_USERS | Rôle STORE_PRODUCTS | Rôle STORE_ORDERS |
+| Privilège | Rôle ``store_manager`` | Rôle ``store_manager_users`` | Rôle ``store_manager_products`` | Rôle ``store_manager_orders`` |
 |---|:---:|:---:|:---:|:---:|
 | LOGIN | X | X | X | X |
 | CREATE TABLE | X |  |  |  |
@@ -84,6 +84,8 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 #### Création des rôles
 
 Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier [roles.sql](./roles.sql).
+
+**Attention : ces requêtes doivent être exécutées par un rôle disposant du privilège CREATEROLE.**
 
 ### Qu'est-ce que la méthode MERISE ?
 
