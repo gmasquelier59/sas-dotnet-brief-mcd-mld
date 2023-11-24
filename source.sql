@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS products;
 CREATE TABLE users (
     user_UUID SERIAL PRIMARY KEY,
     user_pseudo VARCHAR(50) NOT NULL CHECK (user_pseudo <> ''),
-    username VARCHAR(30) NOT NULL CHECK (username <> ''),
+    username VARCHAR(30) UNIQUE NOT NULL CHECK (username <> ''),
     user_password VARCHAR(80) NOT NULL CHECK (user_password <> ''),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
