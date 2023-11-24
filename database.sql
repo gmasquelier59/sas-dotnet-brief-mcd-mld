@@ -28,7 +28,7 @@ CREATE TABLE orders (
     order_total_quantity INTEGER NOT NULL CHECK (order_total_quantity >= 0),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deliver_at TIMESTAMP,
-    CONSTRAINT fk_orders_users FOREIGN KEY (user_UUID) REFERENCES users(user_UUID) ON DELETE CASCADE
+    CONSTRAINT fk_orders_users FOREIGN KEY (user_UUID) REFERENCES users(user_UUID) ON DELETE RESTRICT
 );
 
 CREATE TABLE products_orders (
@@ -36,6 +36,6 @@ CREATE TABLE products_orders (
     order_number INTEGER NOT NULL,
     /* quantity INTEGER NOT NULL CHECK (quantity >= 0), */
     PRIMARY KEY(product_UUID, order_number),
-    CONSTRAINT fk_products_orders_products FOREIGN KEY (product_UUID) REFERENCES products(product_UUID) ON DELETE CASCADE,
-    CONSTRAINT fk_products_orders_orders FOREIGN KEY (order_number) REFERENCES orders(order_number) ON DELETE CASCADE
+    CONSTRAINT fk_products_orders_products FOREIGN KEY (product_UUID) REFERENCES products(product_UUID) ON DELETE RESTRICT,
+    CONSTRAINT fk_products_orders_orders FOREIGN KEY (order_number) REFERENCES orders(order_number) ON DELETE RESTRICT
 );
