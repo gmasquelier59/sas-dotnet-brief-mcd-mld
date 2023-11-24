@@ -1,0 +1,55 @@
+DELETE FROM products_orders;
+DELETE FROM orders;
+DELETE FROM users;
+DELETE FROM products;
+
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (1, 'Mélissandre', 'lagostini0', '$2a$04$SeNROiidlERhKX8rYhiaju5xUF49Ix2B51YvsaGwZAiuA7jzOyEKu');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (2, 'Mélodie', 'msnailham1', '$2a$04$ZS54bRJTafGF7E8DdGtErulQrZg4StUvWf0H8wCMAvzQ6/Ah9EPvO');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (3, 'Nadège', 'rwhitnell2', '$2a$04$i8c3Oq5Xs3RUX.UJXxyZGOn3PIBt0ieLz4om69tZE2rjxMFi96wg2');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (4, 'Annotés', 'rmattheis3', '$2a$04$yEAJJa6RK/.pYbikhRYbeuTRSfeR8BlHnUM1/7gU3aDi47/EEOxVG');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (5, 'Tú', 'owearne4', '$2a$04$5s5NEUUkpOhEQ/.hGzup8.fNY7.hQ1czILxZqX5GZXlvHfw7FgSma');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (6, 'Irène', 'alouis5', '$2a$04$CKVX2zjXiHpC60dMzvKMB.WIHbcAJgyaDrs7ejXvxYL58bHTgUX6i');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (7, 'Léana', 'cbenardet6', '$2a$04$2whxmDF.0Hvfq1Wj.bjgiODCh64aT9oQMt5QJg0PukjnuWAY7zvAC');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (8, 'Anaé', 'lreek7', '$2a$04$AjWue4xrGqerwi19tn6/Quj8uxgbY7riAQDeSnE7RRUsZZ8AP9lJC');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (9, 'Magdalène', 'oarnott8', '$2a$04$P1yR9WaHi9UDIJRD3RuJRuw5cclyTkXSEqoAU3vLRFU5p7V/1AI/m');
+INSERT INTO users (user_UUID, user_pseudo, username, user_password) VALUES (10, 'Aurélie', 'imcneill9', '$2a$04$cM4RFpR8wNHXjTfJMRKDMeSH0V2lFFBQPZQryS3khenfoTkin0kvi');
+
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (1, 'Lighter - Bbq', null, 489.33, 93);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (2, 'Cake - Bande Of Fruit', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 195.19, 72);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (3, 'Pastry - Key Limepoppy Seed Tea', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.', 991.21, 2);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (4, 'Mace Ground', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.', 194.0, 16);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (5, 'Spring Roll Veg Mini', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', 473.83, 10);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (6, 'Pastry - French Mini Assorted', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.', 319.36, 21);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (7, 'Lettuce - Lambs Mash', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 578.23, 22);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (8, 'Juice - V8 Splash', 'Fusce consequat. Nulla nisl. Nunc nisl.', 284.98, 19);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (9, 'Milk - Skim', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 637.89, 67);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (10, 'Fond - Chocolate', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 850.2, 70);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (11, 'Celery', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', 784.35, 87);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (12, 'Wine - Magnotta, Merlot Sr Vqa', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', 469.66, 54);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (13, 'Pheasants - Whole', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', 873.84, 67);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (14, 'Veal - Sweetbread', 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 213.09, 58);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (15, 'Wine - Periguita Fonseca', 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 949.58, 6);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (16, 'Tilapia - Fillets', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', 636.66, 85);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (17, 'Veal - Inside Round / Top, Lean', null, 651.8, 45);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (18, 'Fish - Bones', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 465.76, 57);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (19, 'Green Tea Refresher', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.', 828.75, 47);
+INSERT INTO products (product_UUID, product_name, product_description, product_price, product_quantity) VALUES (20, 'Bok Choy - Baby', 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.', 856.73, 30);
+
+INSERT INTO orders (order_number, user_UUID, order_total_cost_ht, order_total_quantity, deliver_at) VALUES (1, 1, 842.25, 4, null);
+INSERT INTO orders (order_number, user_UUID, order_total_cost_ht, order_total_quantity, deliver_at) VALUES (2, 3, 123.00, 2, null);
+INSERT INTO orders (order_number, user_UUID, order_total_cost_ht, order_total_quantity, deliver_at) VALUES (3, 5, 239.25, 1, null);
+INSERT INTO orders (order_number, user_UUID, order_total_cost_ht, order_total_quantity, deliver_at) VALUES (4, 7, 149.21, 3, null);
+INSERT INTO orders (order_number, user_UUID, order_total_cost_ht, order_total_quantity, deliver_at) VALUES (5, 9, 346.25, 2, null);
+
+INSERT INTO products_orders (product_UUID, order_number) VALUES (8, 1);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (5, 1);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (16, 1);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (20, 1);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (6, 2);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (11, 2);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (3, 3);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (1, 4);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (20, 4);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (13, 4);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (16, 5);
+INSERT INTO products_orders (product_UUID, order_number) VALUES (19, 5);
