@@ -26,9 +26,9 @@ Votre mission Consiste à :
 
 ### Sources
 
-📄[Schéma](./source_schema.sql)
+📄[Schéma](./sources/schema.sql)
 
-📄[Données de test](./source_test_data.sql)
+📄[Données de test](./tests/data.sql)
 
 ### Règles de gestion
 
@@ -87,7 +87,7 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 > ⚠️ **AVERTISSEMENT:** ces requêtes ne doivent être exécutées que par un rôle disposant du privilège CREATEROLE.
 
-Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier 📄[roles.sql](./roles.sql).
+Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier 📄[roles.sql](./sources/roles.sql).
 
 ### Qu'est-ce que la méthode MERISE ?
 
