@@ -22,13 +22,13 @@ Votre mission Consiste à :
 
 ### MPD
 
-[Le dump PostgreSQL](./dump.sql)
+📄[Le dump PostgreSQL](./dump.sql)
 
 ### Sources
 
-[Schéma](./source_schema.sql)
+📄[Schéma](./source_schema.sql)
 
-[Données de test](./source_test_data.sql)
+📄[Données de test](./source_test_data.sql)
 
 ### Règles de gestion
 
@@ -83,10 +83,30 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 #### Création des rôles
 
-Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier [roles.sql](./roles.sql).
+> 👁️ **NOTE:** Il n'est pas nécessaire de créer les rôles manuellement si [le dump PostgreSQL](./dump.sql) a été importé en totalité.
 
-**Attention : ces requêtes doivent être exécutées par un rôle disposant du privilège CREATEROLE.**
+> ⚠️ **AVERTISSEMENT:** ces requêtes ne doivent être exécutées que par un rôle disposant du privilège CREATEROLE.
+
+Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier 📄[roles.sql](./roles.sql).
 
 ### Qu'est-ce que la méthode MERISE ?
 
-<span style="color:red; font-weight: bold;">TODO</span>
+> MERISE = Méthode d'Etude et de Réalisation Informatique pour les Systèmes d'Sntreprise
+
+Méthode de conception des systèmes d'information créée dans les années 70 par une équipe de chercheurs (Jean-Louis le Moigne, Hubert Tardieu, Dominique Nancy, Henry Heckenroth, Daniel Pasco, Bernard Espinasse), encore très utilisée aujourd'hui pour la conception des bases de données.
+
+La méthode MERISE propose de considérer quatre niveaux :
+
+#### le niveau conceptuel
+Il consiste à concevoir le système d'information indépendamment des choix techniques d'implémentation. Il se concrétise par le Modèle Conceptuel de Données (MCD) et par le Modèle Conceptuel des Traitements (MCT).
+
+#### le niveau organisationnel
+Il s'agit ici de définir comment sera organisé le système d'information (définition des postes de travail, accès à la base de données,...). Il se concrétise par le Modèle Organisationne des données (MOD) et le Modèle organisationnel des Traitements (MOT).
+
+#### le niveau logique
+Il constitue une étape vers le modèle physique mais il est indépendant du matériel, des langages de programmation et des SGBD. Il permet de préciser comment les données seront stockées. Il se concrétise par le Modèle Logique de données (MLD) et le Modèle logique des Traitements (MLT).
+
+#### le niveau physique
+Il permet de définir comment les données seront réellement stockées. C'est à ce niveau qu'on détermine le SGBD utilisé. Il se concrétise par le Modèle physique des Données (MPD) et le Modèle Opérationnel et Physique des Traitements (MOpT).
+
+_Source : https://ma-petite-encyclopedie.org/accueil?lex_item=m%C3%A9thode%20MERISE_
