@@ -69,7 +69,7 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 ### RBAC (Role-Based Access Control)
 
-* Le rôle ``store_manager`` gère l'ensemble de la base de données, il peut être considéré comme un "super role"
+* Le rôle ``store_manager`` gère l'ensemble de la base de données, il peut être considéré comme un "_super role_"
 * Le rôle ``store_manager_users`` gère uniquement les données relatives aux utilisateurs
 * Le rôle ``store_manager_products`` gère uniquement les données relatives aux produits
 * Le rôle ``store_manager_orders`` gère uniquement les données relatives aux commandes
@@ -78,12 +78,12 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 | Privilège | Rôle ``store_manager`` | Rôle ``store_manager_users`` | Rôle ``store_manager_products`` | Rôle ``store_manager_orders`` |
 |---|:---:|:---:|:---:|:---:|
-| LOGIN | X | X | X | X |
-| CREATE TABLE | X |  |  |  |
-| ALTER TABLE | X |  |  |  |
-| DROP TABLE | X |  |  |  |
-| SELECT | X<br>(sur toutes les tables) | X<br>(sur toutes les tables) | X<br>(sur toutes les tables) | X<br>(sur toutes les tables) |
-| INSERT, UPDATE, DELETE | X<br>(sur toutes les tables) | X<br>(uniquement sur la table users) | X<br>(uniquement sur la table products) | X<br>(uniquement sur les tables orders et products_orders)
+| ``LOGIN`` | ✅ | ✅ | ✅ | ✅ |
+| ``CREATE TABLE`` | ✅ | ❌ | ❌ | ❌ |
+| ``ALTER TABLE`` | ✅ | ❌ | ❌ | ❌ |
+| ``DROP TABLE`` | ✅ | ❌ | ❌ | ❌ |
+| ``SELECT`` | ✅<br>(sur toutes les tables) | ✅<br>(sur toutes les tables) | ✅<br>(sur toutes les tables) | ✅<br>(sur toutes les tables) |
+| ``INSERT``, ``UPDATE``, ``DELETE`` | ✅<br>(sur toutes les tables) | ✅<br>(uniquement sur la table users) | ✅<br>(uniquement sur la table products) | ✅<br>(uniquement sur les tables orders et products_orders)
 
 #### Création des rôles
 
@@ -91,7 +91,7 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 > Il n'est pas nécessaire de créer les rôles manuellement si [le dump PostgreSQL](./dump.sql) a été importé en totalité.
 
 > [!WARNING]
-> Ces requêtes ne peuvent être exécutées que par un rôle disposant du privilège CREATEROLE.
+> Ces requêtes ne peuvent être exécutées que par un rôle disposant du privilège ``CREATEROLE``.
 
 Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier 📄[roles.sql](./sources/roles.sql).
 
