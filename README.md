@@ -2,6 +2,10 @@
 
 Brief réalisé dans le cadre de la formation "Développeur .Net" avec Simplon & M2I en novembre 2023.
 
+<img src="./resources/banner.png">
+
+_Image générée par une IA_
+
 ## Objectif
 
 Création d'une base de données PostgreSQL à partir d'un diagramme Merise
