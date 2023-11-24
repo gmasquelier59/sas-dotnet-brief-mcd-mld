@@ -24,8 +24,8 @@ CREATE TABLE products (
 CREATE TABLE orders (
     order_number SERIAL PRIMARY KEY,
     user_UUID INTEGER NOT NULL,
-    order_total_cost_ht MONEY NOT NULL CHECK (order_total_cost_ht::numeric >= 0),
-    order_total_quantity INTEGER NOT NULL CHECK (order_total_quantity >= 0),
+    order_total_cost_ht MONEY NOT NULL CHECK (order_total_cost_ht::numeric > 0),
+    order_total_quantity INTEGER NOT NULL CHECK (order_total_quantity > 0),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deliver_at TIMESTAMP,
     CONSTRAINT fk_orders_users FOREIGN KEY (user_UUID) REFERENCES users(user_UUID) ON DELETE RESTRICT
