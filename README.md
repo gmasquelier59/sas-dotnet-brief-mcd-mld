@@ -87,9 +87,11 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 #### Création des rôles
 
-> 👁️ **NOTE:** Il n'est pas nécessaire de créer les rôles manuellement si [le dump PostgreSQL](./dump.sql) a été importé en totalité.
+> [!NOTE]
+> Il n'est pas nécessaire de créer les rôles manuellement si [le dump PostgreSQL](./dump.sql) a été importé en totalité.
 
-> ⚠️ **AVERTISSEMENT:** ces requêtes ne doivent être exécutées que par un rôle disposant du privilège CREATEROLE.
+> [!WARNING]
+> Ces requêtes ne peuvent être exécutées que par un rôle disposant du privilège CREATEROLE.
 
 Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier 📄[roles.sql](./sources/roles.sql).
 
