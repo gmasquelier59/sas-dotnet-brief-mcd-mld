@@ -32,23 +32,36 @@ Votre mission Consiste à :
 
 ### Règles de gestion
 
-* Concernant les utilisateurs :
-    * Le pseudo ne peut ni être nul, ni vide
-    * Le nom d'utilisateur ne peut ni être nul, ni vide. Il est unique dans la table
-    * Le mot de passe ne peut ni être nul, ni vide. Il doit être obligatoirement hashé avec bcrypt.
+Il est possible de consulter tous les produits disponibles dans la boutique.
+
+Lorsqu'un visiteur souhaite effectuer une commande, il doit :
+* soit se créer un compte utilisateur
+* soit s'identifier avec un compte utilisateur existant
+
+Un compte utilisateur est obligatoire pour passer une commande et consulter ses commandes, il n'est pas obligatoire pour consulter la liste des produits disponibles.
+
+Une commande confirmée comporte au minimum 1 produit et a un montant total supérieur à 0.
+
+* Concernant les comptes utilisateurs :
+    * Un compte utilisateur nécessite un nom d'utilisateur (username) et un mot de passe (password) de longueur minimale de 10 caractères et d'un maximum 20 caractères, comportant au minimum une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial.
+    * Le compte utilisateur doit comporter un pseudo, il ne peut être ni nul, ni vide.
+    * Le nom d'utilisateur ne peut être ni nul, ni vide. Il est unique parmi tous les utilisateurs.
+    * Le mot de passe ne peut être ni nul, ni vide. Il doit être obligatoirement hashé avec bcrypt.
     * La suppression d'un utilisateur n'entraine pas la suppression de ses commandes.
 
 * Concernant les produits :
-    * Le nom ne peut ni être nul, ni vide.
+    * Le nom du produit ne peut être ni nul, ni vide.
     * Le prix ne peut pas être nul et doit être supérieur ou égal à 0.
-    * La quantité en stock ne peut pas être nulle et doit être supérieure à 0.
+    * La quantité en stock ne peut pas être nulle et doit être supérieure ou égale à 0.
     * La suppression d'un produit n'entraine pas la suppression des commandes dans lequel figure le produit.
+    * Un produit peut figurer dans plusieurs commandes.
 
 * Concernant les commandes :
-    * Chaque commande est associée à un et un seul utilisateur existant.
-    * Un utilisateur peut ou non être associé à une commande.
-    * Le montant total de la commande ne peut être nul et doit être supérieur ou égal à 0.
-    * La quantité totale commandée ne peut être nulle et doit être supérieure ou égal à 0.
+    * Chaque commande est associée à un et un seul compte utilisateur existant.
+    * Un utilisateur peut ou non être associé à une commande. Un utilisateur peut passer plusieurs commandes.
+    * Le montant total de la commande ne peut être nul et doit être supérieur à 0.
+    * La quantité totale commandée ne peut être nulle et doit être supérieure à 0.
+    * La suppression d'une commande ne supprime pas le compte utilisateur associé.
 
 ### RBAC (Role-Based Access Control)
 
