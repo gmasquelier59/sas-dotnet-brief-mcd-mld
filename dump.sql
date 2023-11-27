@@ -316,6 +316,20 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: username_idx; Type: INDEX; Schema: public; Owner: gmasquelier
+--
+
+CREATE UNIQUE INDEX username_idx ON public.users USING btree (username);
+
+
+--
+-- Name: username_password_idx; Type: INDEX; Schema: public; Owner: gmasquelier
+--
+
+CREATE UNIQUE INDEX username_password_idx ON public.users USING btree (username, user_password);
+
+
+--
 -- Name: orders fk_orders_users; Type: FK CONSTRAINT; Schema: public; Owner: gmasquelier
 --
 

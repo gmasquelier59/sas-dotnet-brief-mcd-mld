@@ -11,6 +11,9 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE UNIQUE INDEX username_idx ON users (username);
+CREATE UNIQUE INDEX username_password_idx ON users (username, user_password);
+
 CREATE TABLE products (
     product_UUID SERIAL PRIMARY KEY,
     product_name VARCHAR(100) NOT NULL CHECK (product_name <> ''),
