@@ -11,8 +11,8 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE UNIQUE INDEX username_idx ON users (username);
-CREATE UNIQUE INDEX username_password_idx ON users (username, user_password);
+CREATE UNIQUE INDEX users_username_idx ON users (username);
+CREATE UNIQUE INDEX users_username_password_idx ON users (username, user_password);
 
 CREATE TABLE products (
     product_UUID SERIAL PRIMARY KEY,
@@ -33,6 +33,8 @@ CREATE TABLE orders (
     deliver_at TIMESTAMP,
     CONSTRAINT fk_orders_users FOREIGN KEY (user_UUID) REFERENCES users(user_UUID) ON DELETE RESTRICT
 );
+
+CREATE UNIQUE INDEX orders_user_UUID_idx ON orders (user_UUID);
 
 CREATE TABLE products_orders (
     product_UUID INTEGER NOT NULL,

@@ -316,6 +316,13 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: orders_user_uuid_idx; Type: INDEX; Schema: public; Owner: gmasquelier
+--
+
+CREATE UNIQUE INDEX orders_user_uuid_idx ON public.orders USING btree (user_uuid);
+
+
+--
 -- Name: username_idx; Type: INDEX; Schema: public; Owner: gmasquelier
 --
 
