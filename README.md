@@ -1,17 +1,26 @@
 # Brief "Création BDD PostgreSQL pour la plateforme e-commerce "AuBonDeal"
 
-Brief réalisé dans le cadre de la formation "Développeur .Net" avec Simplon & M2I en novembre 2023.
-
 <img src="./resources/banner.png">
 
 _Image générée par une IA_
 
-## Objectif
+## Table des matières
 
-Création d'une base de données PostgreSQL à partir d'un diagramme Merise
+<ul>
+    <li><a href="#contexte">Contexte</a></li>
+    <li><a href="#structure-de-la-base-de-données">Structure de la base de données</a></li>
+    <li><a href="#règles-de-gestion">Règles de gestion</a></li>
+    <li><a href="#rbac-role-based-access-control">RBAC (Role-Based Access Control)</a></li>
+    <li><a href="#aperçu-de-la-méthode-merise">Aperçu de la méthode MERISE</a></li>
+</ul>
 
 ## Contexte
 
+_Ce repo a été créé dans le cadre de la formation "Développeur .Net" avec Simplon & M2I en novembre 2023._
+
+Intitulé du brief :
+
+```
 Vous êtes sur le point de contribuer à la création de "AuBonDeal", une plateforme de commerce en ligne.
 
 Votre mission Consiste à :
@@ -21,20 +30,27 @@ Votre mission Consiste à :
 * Traduire ces modèles en une base de données relationnelle fonctionnelle en utilisant le langage SQL. Cela inclut la définition des tables, des relations, des clés primaires et étrangères, ainsi que des contraintes d'intégrité.
 
 * Assurer que la base de données est conçue pour gérer efficacement les opérations CRUD, avec une attention particulière portée à la sécurité et à la performance.
+```
 
-## Livrables
+## Structure de la base de données
+
+### MCD et MLD
+
+Le MCD et le MLD ont été fournis dans le cadre du brief, ils sont téléchargeables ici : 
+
+📄[MCD](./resources/mcd.png) 📄[MLD](./resources/mld.png)
 
 ### MPD
 
-📄[Le dump PostgreSQL](./dump.sql)
+📄[Dump PostgreSQL](./dump.sql)
 
-### Sources
+### Sources de travail
 
 📄[Schéma](./sources/schema.sql)
 
 📄[Données de test](./tests/data.sql)
 
-### Règles de gestion
+## Règles de gestion
 
 Il est possible de consulter tous les produits disponibles dans la boutique.
 
@@ -47,7 +63,8 @@ Un compte utilisateur est obligatoire pour passer une commande et consulter ses 
 Une commande confirmée comporte au minimum 1 produit et a un montant total supérieur à 0.
 
 * Concernant les comptes utilisateurs :
-    * Un compte utilisateur nécessite un nom d'utilisateur (username) et un mot de passe (password) de longueur minimale de 10 caractères et d'un maximum 20 caractères, comportant au minimum une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial.
+    * Un compte utilisateur nécessite un nom d'utilisateur (``username``) et un mot de passe (``password``) pour s'identifier.
+    Le mot de passe a une longueur comprise entre 10 et 20 caractères, et comporte au minimum une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial.
     * Le compte utilisateur doit comporter un pseudo, il ne peut être ni nul, ni vide.
     * Le nom d'utilisateur ne peut être ni nul, ni vide. Il est unique parmi tous les utilisateurs.
     * Le mot de passe ne peut être ni nul, ni vide. Il doit être obligatoirement hashé avec bcrypt.
@@ -67,14 +84,14 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
     * La quantité totale commandée ne peut être nulle et doit être supérieure à 0.
     * La suppression d'une commande ne supprime pas le compte utilisateur associé.
 
-### RBAC (Role-Based Access Control)
+## RBAC (Role-Based Access Control)
 
 * Le rôle ``store_manager`` gère l'ensemble de la base de données, il peut être considéré comme un "_super role_"
 * Le rôle ``store_manager_users`` gère uniquement les données relatives aux utilisateurs
 * Le rôle ``store_manager_products`` gère uniquement les données relatives aux produits
 * Le rôle ``store_manager_orders`` gère uniquement les données relatives aux commandes
 
-#### Tableau de correspondance rôle / privilège
+### Tableau de correspondance rôle / privilège
 
 | Privilège | Rôle ``store_manager`` | Rôle ``store_manager_users`` | Rôle ``store_manager_products`` | Rôle ``store_manager_orders`` |
 |---|:---:|:---:|:---:|:---:|
@@ -85,7 +102,7 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 | ``SELECT`` | ✅<br>(sur toutes les tables) | ✅<br>(sur toutes les tables) | ✅<br>(sur toutes les tables) | ✅<br>(sur toutes les tables) |
 | ``INSERT``, ``UPDATE``, ``DELETE`` | ✅<br>(sur toutes les tables) | ✅<br>(uniquement sur la table users) | ✅<br>(uniquement sur la table products) | ✅<br>(uniquement sur les tables orders et products_orders)
 
-#### Création des rôles
+### Création des rôles
 
 > [!NOTE]
 > Il n'est pas nécessaire de créer les rôles manuellement si [le dump PostgreSQL](./dump.sql) a été importé en totalité.
@@ -95,7 +112,7 @@ Une commande confirmée comporte au minimum 1 produit et a un montant total sup�
 
 Les requêtes SQL permettant de créer les rôles et définir les permissions sont disponibles dans le fichier 📄[roles.sql](./sources/roles.sql).
 
-### Qu'est-ce que la méthode MERISE ?
+## Aperçu de la méthode MERISE
 
 > MERISE = Méthode d'Etude et de Réalisation Informatique pour les Systèmes d'Entreprise
 
@@ -103,16 +120,16 @@ Méthode de conception des systèmes d'information créée dans les années 1970
 
 La méthode MERISE propose de considérer quatre niveaux :
 
-#### le niveau conceptuel
+### ➡️ le niveau conceptuel
 Il consiste à concevoir le système d'information indépendamment des choix techniques d'implémentation. Il se concrétise par le Modèle Conceptuel de Données (MCD) et par le Modèle Conceptuel des Traitements (MCT).
 
-#### le niveau organisationnel
+### ➡️ le niveau organisationnel
 Il s'agit ici de définir comment sera organisé le système d'information (définition des postes de travail, accès à la base de données,...). Il se concrétise par le Modèle Organisationne des données (MOD) et le Modèle organisationnel des Traitements (MOT).
 
-#### le niveau logique
+### ➡️ le niveau logique
 Il constitue une étape vers le modèle physique mais il est indépendant du matériel, des langages de programmation et des SGBD. Il permet de préciser comment les données seront stockées. Il se concrétise par le Modèle Logique de données (MLD) et le Modèle logique des Traitements (MLT).
 
-#### le niveau physique
+### ➡️ le niveau physique
 Il permet de définir comment les données seront réellement stockées. C'est à ce niveau qu'on détermine le SGBD utilisé. Il se concrétise par le Modèle physique des Données (MPD) et le Modèle Opérationnel et Physique des Traitements (MOpT).
 
 _Source : https://ma-petite-encyclopedie.org/accueil?lex_item=m%C3%A9thode%20MERISE_
